@@ -20,14 +20,21 @@ resource "azurerm_key_vault" "kv" {
   # Enable RBAC authorization instead of access policies
   enable_rbac_authorization = true
 
+  network_acls {
+    default_action = "Allow"
+    bypass         = "AzureServices"
+  }
 
   tags = var.tags
 }
 
-# Container App Environment
-resource "azurerm_container_app_environment" "env" {
-  name                = var.container_app_environment_name
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  tags                = var.tags
+# Outputs
+output "key_vault_name" {
+  description = "The name of the Key Vault"
+  value       = azurerm_key_vault.kv.name
+}
+
+output "key_vault_uri" {
+  description = "The URI of the Key Vault"
+  value       = azurerm_key_vault.kv.vault_uri
 }
