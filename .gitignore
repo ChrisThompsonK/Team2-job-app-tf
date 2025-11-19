@@ -13,7 +13,6 @@ crash.*.log
 # password, private keys, and other secrets. These should not be part of version 
 # control as they are data points which are potentially sensitive and subject 
 # to change depending on the environment.
-*.tfvars
 *.tfvars.json
 
 # Ignore override files as they are usually used to override resources locally and so
@@ -26,6 +25,9 @@ override.tf.json
 # Ignore transient lock info files created by terraform apply
 .terraform.tfstate.lock.info
 
+# Ignore Terraform provider lock file
+.terraform.lock.hcl
+
 # Include override files you do wish to add to version control using negated pattern
 # !example_override.tf
 
@@ -35,3 +37,7 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# MCP Server configurations (local development only)
+MCPServers/
+.github.instructions
