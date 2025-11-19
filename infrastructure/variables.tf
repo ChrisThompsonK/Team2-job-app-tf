@@ -9,3 +9,18 @@ variable "location" {
   description = "Azure location for resources"
   default     = "UK South"
 }
+variable "key_vault_name" {
+  type        = string
+  description = "Name of the Azure Key Vault"
+}
+
+variable "container_app_environment_name" {
+  type        = string
+  description = "Name of the Container App Environment"
+}
+
+variable "tags" {
+  type        = map(any)
+  description = "Tags to apply to resources"
+  default     = {}
+}
