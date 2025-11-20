@@ -19,6 +19,11 @@ variable "container_app_environment_name" {
   description = "Name of the Container App Environment"
 }
 
+variable "managed_identity_name" {
+  type        = string
+  description = "Name of the user-assigned managed identity"
+}
+
 variable "tags" {
   type        = map(any)
   description = "Tags to apply to resources"
