@@ -7,6 +7,12 @@ resource "azurerm_resource_group" "rg" {
 # Data source to get current user info
 data "azurerm_client_config" "current" {}
 
+# Data source for ACR (existing resource)
+data "azurerm_container_registry" "acr" {
+  name                = var.container_registry_name
+  resource_group_name = var.acr_resource_group
+}
+
 # Azure Key Vault
 resource "azurerm_key_vault" "kv" {
   name                     = var.key_vault_name
