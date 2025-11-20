@@ -15,7 +15,7 @@ terraform {
     resource_group_name  = "terraform-state-mgmt"
     storage_account_name = "aistatemgmt"
     container_name       = "terraform-tfstate-ai"
-    key                  = "team2-job-app-frontend.dev.tfstate"
+    key                  = "team2-job-app-shared-repo.dev.tfstate"
   }
 }
 
